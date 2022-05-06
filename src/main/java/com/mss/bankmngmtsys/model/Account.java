@@ -34,6 +34,9 @@ public class Account {
         return balance;
     }
 
+    public void setBalance(BigDecimal balance) {
+        this.balance = balance;
+    }
 
     public BigDecimal addToBalance(BigDecimal balance) {
         return this.balance = this.balance.add(balance);

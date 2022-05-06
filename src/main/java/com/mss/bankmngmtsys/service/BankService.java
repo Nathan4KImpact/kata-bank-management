@@ -20,7 +20,7 @@ import java.util.logging.Logger;
 public class BankService {
 
     private Logger LOG = Logger.getLogger("BankService ");
-    private final BigDecimal maximal_Boundary = new BigDecimal(-500);
+    private final BigDecimal THRESHOLD_AMOUNT_VALUE = new BigDecimal(-50);
    private final String TRANSACTIONS_HISTORY_FILE = "D:\\MesPROJETS\\Ingeniance\\devs\\kata-bank-management\\database\\transactionsHistory.json";
 
 
@@ -42,7 +42,7 @@ public class BankService {
                 break;
             case WITHDRAWAL :
                 trx.getAccount().addToBalance(trx.getAmount().negate());
-                if (trx.getAccount().getBalance().compareTo(BigDecimal.ZERO) < 0){
+                if (trx.getAccount().getBalance().compareTo(THRESHOLD_AMOUNT_VALUE) < 0){
                     LOG.log(Level.WARNING, "Vous avez un solde négatif !");
                 }
                 client.addInTransactionHistory(trx);
