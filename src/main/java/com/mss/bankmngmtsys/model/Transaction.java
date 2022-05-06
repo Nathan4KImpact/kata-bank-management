@@ -2,11 +2,8 @@ package com.mss.bankmngmtsys.model;
 
 import com.mss.bankmngmtsys.utils.EnumTransactionType;
 
-import javax.swing.text.DateFormatter;
 import java.math.BigDecimal;
-import java.text.DateFormat;
 import java.time.LocalDate;
-import java.util.Date;
 
 /**
  * Transaction Class
@@ -18,6 +15,14 @@ public class Transaction {
     private EnumTransactionType trxType;
     private Account account;
     private LocalDate trxDate;
+
+    public Transaction(Long trxId, BigDecimal amount, EnumTransactionType trxType, Account account) {
+        this.trxId = trxId;
+        this.amount = amount;
+        this.trxType = trxType;
+        this.account = account;
+        this.trxDate = LocalDate.now();
+    }
 
     public Long getTrxId() {
         return trxId;

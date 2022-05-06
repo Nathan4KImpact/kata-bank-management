@@ -8,16 +8,22 @@ import java.math.BigDecimal;
  */
 public class Account {
     private Long accId;
-    private Client accountOwner;
+    private Long accountOwnerId;
     private String accountNumber;
-    private BigDecimal balance;
+    private BigDecimal balance = BigDecimal.ZERO;
+
+    public Account(Long accId, Long accountOwnerId, String accountNumber) {
+        this.accId = accId;
+        this.accountOwnerId = accountOwnerId;
+        this.accountNumber = accountNumber;
+    }
 
     public Long getAccId() {
         return accId;
     }
 
-    public Client getAccountOwner() {
-        return accountOwner;
+    public Long getAccountOwnerId() {
+        return accountOwnerId;
     }
 
     public String getAccountNumber() {
@@ -28,26 +34,19 @@ public class Account {
         return balance;
     }
 
-    public void setAccountOwner(Client accountOwner) {
-        this.accountOwner = accountOwner;
-    }
 
-
-    public void setAccountNumber(String accountNumber) {
-        this.accountNumber = accountNumber;
-    }
-
-    public void setBalance(BigDecimal balance) {
-        this.balance = balance;
+    public BigDecimal addToBalance(BigDecimal balance) {
+        return this.balance = this.balance.add(balance);
     }
 
     @Override
     public String toString() {
         return "Account{" +
                 "accId=" + accId +
-                ", accountOwner=" + accountOwner.getCliName() +
+                ", accountOwner=" + accountOwnerId +
                 ", accountNumber='" + accountNumber + '\'' +
                 ", balance=" + balance +
                 '}';
     }
+
 }
