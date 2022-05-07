@@ -1,13 +1,21 @@
-package com.mss.bankmngmtsys.model;
+package com.mss.bankmgnt.model;
 
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Client Class
+ * @author RNF
+ */
 public class Client implements Serializable  {
     private Long cliId;
     private String cliName;
     private List<Transaction> transactionHistory;
+
+    public Client() {
+        this.transactionHistory = new ArrayList<>();
+    }
 
     public Client(Long cliId, String cliName) {
         this.cliId = cliId;

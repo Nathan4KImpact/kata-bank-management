@@ -1,0 +1,58 @@
+{
+  "cliId": 1,
+  "cliName": "Raoul FONGANG",
+  "transactionHistory": [
+    {
+      "trxId": 1,
+      "amountTxt": "10,00 €",
+      "trxType": "DEPOSIT",
+      "account": {
+        "accId": 1,
+        "accountClientId": 1,
+        "accountNumber": "FRXX XXXX XXXX XXXX 0001",
+        "balance": 10,
+        "balancetxt": "10,00 €"
+      },
+      "trxDate": "08/05/2022"
+    },
+    {
+      "trxId": 2,
+      "amountTxt": "5,00 €",
+      "trxType": "WITHDRAWAL",
+      "account": {
+        "accId": 1,
+        "accountClientId": 1,
+        "accountNumber": "FRXX XXXX XXXX XXXX 0001",
+        "balance": 5,
+        "balancetxt": "-5,00 €"
+      },
+      "trxDate": "08/05/2022"
+    },
+    {
+      "trxId": 3,
+      "amountTxt": "15,00 €",
+      "trxType": "WITHDRAWAL",
+      "account": {
+        "accId": 1,
+        "accountClientId": 1,
+        "accountNumber": "FRXX XXXX XXXX XXXX 0001",
+        "balance": -10,
+        "balancetxt": "-15,00 €"
+      },
+      "trxDate": "08/05/2022"
+    },
+    {
+      "trxId": 4,
+      "amountTxt": "50,00 €",
+      "trxType": "DEPOSIT",
+      "account": {
+        "accId": 1,
+        "accountClientId": 1,
+        "accountNumber": "FRXX XXXX XXXX XXXX 0001",
+        "balance": 40,
+        "balancetxt": "50,00 €"
+      },
+      "trxDate": "08/05/2022"
+    }
+  ]
+}

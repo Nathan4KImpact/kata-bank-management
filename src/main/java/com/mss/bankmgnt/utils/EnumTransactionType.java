@@ -1,4 +1,4 @@
-package com.mss.bankmngmtsys.utils;
+package com.mss.bankmgnt.utils;
 
 public enum EnumTransactionType {
     DEPOSIT,
