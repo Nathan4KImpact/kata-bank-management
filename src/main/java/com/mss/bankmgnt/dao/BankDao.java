@@ -9,6 +9,7 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.math.BigDecimal;
 import java.nio.charset.Charset;
+import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
@@ -38,7 +39,7 @@ public class BankDao {
 
         try {
             Path outputPath = Paths.get(TRANSACTIONS_HISTORY_FILE);
-            Files.writeString (outputPath, jsonString, Charset.forName("UTF-8"));
+            Files.write(outputPath, jsonString.getBytes(StandardCharsets.UTF_8));
         } catch (IOException e) {
             LOG.log(Level.SEVERE, "Erreur lors de la sauvegarde de la transaction");
             return false;
@@ -51,7 +52,7 @@ public class BankDao {
         Client cli = new Client();
         try  {
             Path path = Paths.get(TRANSACTIONS_HISTORY_FILE);
-            String inputJsonContent = Files.readString(path);
+            String inputJsonContent = String.join("\n", Files.readAllLines(path,StandardCharsets.UTF_8));
 
             //Read JSON file
             Gson gson = new Gson();
