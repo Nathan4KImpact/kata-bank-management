@@ -7,6 +7,7 @@ import com.mss.bankmgnt.utils.EnumTransactionType;
 
 import java.math.BigDecimal;
 import java.util.List;
+import java.util.Locale;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -66,10 +67,10 @@ public class BankService {
 
     /**
      * Retrieve the history of prerecorded transactions
-     * @param clientHisto
+     * @param cliHisto
      * @return List of client's transactions retrieved from the storage
      */
-    public List<Transaction> showAccountHistoryOfTransactions(Client clientHisto){
-       return  dao.show(clientHisto);
+    public List<Transaction> showAccountHistoryOfTransactions(Client cliHisto){
+        return  dao.show(cliHisto);
     }
 }

@@ -18,7 +18,7 @@ public class Account implements  Cloneable {
     private Long accountClientId;
     private String accountNumber;
     private BigDecimal balance;
-    private String balancetxt;
+    private transient String balancetxt;
 
     public Account(Long accId, Long accountClientId, String accountNumber) {
         this.accId = accId;

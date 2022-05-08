@@ -57,13 +57,15 @@ public class BankDao {
             //Read JSON file
             Gson gson = new Gson();
             cli = gson.fromJson(inputJsonContent, Client.class);
-            cli.getTransactionHistory().forEach(trx -> {
-                try {
-                    trx.setAmount(BigDecimal.valueOf( currencyFormat.parse(trx.getAmountTxt()).longValue() ));
-                } catch (ParseException e) {
-                    e.printStackTrace();
-                }
-            });
+            cli.getTransactionHistory()
+                    .forEach(trx -> {
+                        try {
+                            trx.setAmount(BigDecimal.valueOf( currencyFormat.parse(trx.getAmountTxt()).longValue() ));
+                        } catch (ParseException e) {
+                            e.printStackTrace();
+                        }
+                    }
+            );
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         } catch (IOException e) {
