@@ -23,10 +23,10 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 public class BankDao {
-    private transient NumberFormat currencyFormat = NumberFormat.getCurrencyInstance(Locale.FRANCE);
+    private transient final NumberFormat currencyFormat = NumberFormat.getCurrencyInstance(Locale.FRANCE);
     ResourceBundle config = ResourceBundle.getBundle("config");
 
-    private Logger LOG = Logger.getLogger("BankDao");
+    private final Logger LOG = Logger.getLogger("BankDao");
     private static String TRANSACTIONS_HISTORY_FILE;
 
 
@@ -59,8 +59,9 @@ public class BankDao {
             cli = gson.fromJson(inputJsonContent, Client.class);
             cli.getTransactionHistory()
                     .forEach(trx -> {
-                        try {
+                        try { // parse amount and balance from String to BigDecimal
                             trx.setAmount(BigDecimal.valueOf( currencyFormat.parse(trx.getAmountTxt()).longValue() ));
+                            trx.getAccount().setBalance(BigDecimal.valueOf( currencyFormat.parse(trx.getAccount().getBalancetxt()).longValue() ));
                         } catch (ParseException e) {
                             e.printStackTrace();
                         }

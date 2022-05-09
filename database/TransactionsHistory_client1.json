@@ -10,7 +10,7 @@
         "accId": 1,
         "accountClientId": 1,
         "accountNumber": "FRXX XXXX XXXX XXXX 0001",
-        "balance": 10
+        "balancetxt": "10,00 €"
       },
       "trxDate": "08/05/2022"
     },
@@ -22,7 +22,7 @@
         "accId": 1,
         "accountClientId": 1,
         "accountNumber": "FRXX XXXX XXXX XXXX 0001",
-        "balance": 5
+        "balancetxt": "5,00 €"
       },
       "trxDate": "08/05/2022"
     },
@@ -34,7 +34,7 @@
         "accId": 1,
         "accountClientId": 1,
         "accountNumber": "FRXX XXXX XXXX XXXX 0001",
-        "balance": -10
+        "balancetxt": "-10,00 €"
       },
       "trxDate": "08/05/2022"
     },
@@ -46,7 +46,7 @@
         "accId": 1,
         "accountClientId": 1,
         "accountNumber": "FRXX XXXX XXXX XXXX 0001",
-        "balance": 40
+        "balancetxt": "40,00 €"
       },
       "trxDate": "08/05/2022"
     }

@@ -12,13 +12,13 @@ import java.util.Objects;
  */
 public class Account implements  Cloneable {
 
-    private transient NumberFormat currencyFormat = NumberFormat.getCurrencyInstance(Locale.FRANCE);
+    private transient final NumberFormat currencyFormat = NumberFormat.getCurrencyInstance(Locale.FRANCE);
 
     private Long accId;
     private Long accountClientId;
     private String accountNumber;
-    private BigDecimal balance;
-    private transient String balancetxt;
+    private transient BigDecimal balance;
+    private String balancetxt;
 
     public Account(Long accId, Long accountClientId, String accountNumber) {
         this.accId = accId;
@@ -48,9 +48,9 @@ public class Account implements  Cloneable {
         this.balance = balance;
     }
 
-    public void addToBalance(BigDecimal balance) {
-        this.balance = this.balance.add(balance);
-        this.balancetxt = currencyFormat.format(balance);
+    public void addToBalance(BigDecimal signedAmount) {
+        this.balance = this.balance.add(signedAmount);
+        this.balancetxt = currencyFormat.format(this.balance);
        // return balance;
     }
 

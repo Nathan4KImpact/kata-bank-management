@@ -2,14 +2,14 @@
 
 Solution : 
 - The use cases are implemented in a service (BankService) and are all testable through the BankTMngtests class
-- We choose a simple solution to maintain a storage of transactions history, in a Json file, whose path is configurable in resources/config.properties project file 
+- We choose a simple solution to maintain a storage and formatted view of transactions history, into a Json file, whose path is configurable in resources/config.properties project file 
 
 KATA Specifications :
 •         Deposit and Withdrawal
 •         Account statement (date, amount, balance)
 •         Statement printing
 
-User Stories
+User Stories :
 •         US 1:
 In order to save money
 As a bank client
